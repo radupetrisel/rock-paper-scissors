@@ -53,12 +53,10 @@ struct ContentView: View {
             
             HStack(spacing: 30) {
                 ForEach(Move.allCases, id: \.self) { move in
-                    Button {
+                    Button(move.emoji) {
                         didSelect(move: move)
-                    } label: {
-                        Text(move.emoji)
-                            .font(.system(size: 70))
                     }
+                    .font(.system(size: 70))
                 }
             }
         }
@@ -79,8 +77,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }
